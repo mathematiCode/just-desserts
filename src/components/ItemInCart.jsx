@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 
 function ItemInCart({ product }) {
-  let quantity = 4;
   return (
     <div className="item-in-cart">
       <img
@@ -11,10 +10,10 @@ function ItemInCart({ product }) {
       <div className="product-info">
         <p className="product-name"> {product.name} </p>
         <div className="product-details">
-          <p className="quantity"> {`${quantity}x`} </p>
+          <p className="quantity"> {`${product.quantity}x`} </p>
           <p className="price-per-item"> {`@ $${product.price}`} </p>
           <p className="total-price-for-items">{`$${
-            product.price * quantity
+            product.price * product.quantity
           }`}</p>
         </div>
       </div>
