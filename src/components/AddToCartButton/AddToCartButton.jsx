@@ -7,7 +7,7 @@ function AddToCartButton({ itemsInCart, setItemsInCart, product }) {
   const [isClicked, setIsClicked] = React.useState(false);
   const [numItems, setNumItems] = React.useState(0);
 
-  function updateArrayOfItems(itemsInCart, setItemsInCart, product) {
+  function addItemToArray(itemsInCart, setItemsInCart, product) {
     // Create a copy of the current cart items to avoid direct state mutation
     const updatedCart = [...itemsInCart];
 
@@ -33,11 +33,31 @@ function AddToCartButton({ itemsInCart, setItemsInCart, product }) {
     setItemsInCart(updatedCart);
   }
 
+  function removeItemFromArray(itemsInCart, setItemsInCart, product) {
+    // Create a copy of the current cart items to avoid direct state mutation
+    const updatedCart = [...itemsInCart];
+
+    // Check if the item already exists in the cart
+    const existingItem = updatedCart.find(
+      (item) => item.folder === product.folder
+    );
+
+    if (existingItem) {
+      existingItem.quantity = existingItem.quantity - 1;
+      setNumItems(existingItem.quantity);
+    } else {
+      console.error("Item not found in cart");
+    }
+
+    console.log(updatedCart);
+    setItemsInCart(updatedCart);
+  }
+
   function addItemToCart(product) {
     setIsClicked(true);
 
     console.log(product);
-    updateArrayOfItems(itemsInCart, setItemsInCart, product, numItems);
+    addItemToArray(itemsInCart, setItemsInCart, product, numItems);
   }
 
   return (

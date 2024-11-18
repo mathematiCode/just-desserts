@@ -55,3 +55,31 @@
   width: 90px;
   display: none;
 }
+
+.confirm-order-button {
+  color: white;
+  background-color: rgb(200, 50, 50);
+  font-size: 1rem;
+  border-radius: 20px;
+  width: 160px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-bottom-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
