@@ -9,13 +9,14 @@ function AddToCartButton({ itemsInCart, setItemsInCart, product }) {
 
   function updateCart(itemsInCart, setItemsInCart, product, numItems) {
     setIsClicked(true);
-    const updatedCart = [...itemsInCart];
+    let updatedCart = [...itemsInCart];
     const existingItem = updatedCart.find(
       (item) => item.folder === product.folder
     );
 
     if (existingItem && numItems == 0) {
-      console.log("Need to remove", existingItem);
+      updatedCart = itemsInCart.filter((item) => item.folder != product.folder);
+      setIsClicked(false);
     } else if (existingItem) {
       existingItem.quantity = numItems;
     } else {
