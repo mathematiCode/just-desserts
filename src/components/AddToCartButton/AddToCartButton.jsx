@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+import React, { useEffect } from "react";
 import UnclickedButton from "./UnclickedButton";
 import NumItemsToggle from "./NumItemsToggle";
 
@@ -7,63 +7,39 @@ function AddToCartButton({ itemsInCart, setItemsInCart, product }) {
   const [isClicked, setIsClicked] = React.useState(false);
   const [numItems, setNumItems] = React.useState(0);
 
-  function addItemToArray(itemsInCart, setItemsInCart, product) {
-    // Create a copy of the current cart items to avoid direct state mutation
+  function updateCart(itemsInCart, setItemsInCart, product, numItems) {
+    setIsClicked(true);
     const updatedCart = [...itemsInCart];
-
-    // Check if the item already exists in the cart
     const existingItem = updatedCart.find(
       (item) => item.folder === product.folder
     );
 
-    if (existingItem) {
-      existingItem.quantity += 1;
-      setNumItems(existingItem.quantity);
+    if (existingItem && numItems == 0) {
+      console.log("Need to remove", existingItem);
+    } else if (existingItem) {
+      existingItem.quantity = numItems;
     } else {
+      setNumItems(1);
       updatedCart.push({
         folder: product.folder,
         name: product.name,
         price: product.price,
-        quantity: 1,
+        quantity: numItems,
       });
-      setNumItems(1);
     }
 
-    console.log(updatedCart);
     setItemsInCart(updatedCart);
   }
 
-  function removeItemFromArray(itemsInCart, setItemsInCart, product) {
-    // Create a copy of the current cart items to avoid direct state mutation
-    const updatedCart = [...itemsInCart];
-
-    // Check if the item already exists in the cart
-    const existingItem = updatedCart.find(
-      (item) => item.folder === product.folder
-    );
-
-    if (existingItem) {
-      existingItem.quantity = existingItem.quantity - 1;
-      setNumItems(existingItem.quantity);
-    } else {
-      console.error("Item not found in cart");
+  useEffect(() => {
+    if (isClicked) {
+      updateCart(itemsInCart, setItemsInCart, product, numItems);
     }
-
-    console.log(updatedCart);
-    setItemsInCart(updatedCart);
-  }
-
-  function addItemToCart(product) {
-    setIsClicked(true);
-
-    console.log(product);
-    addItemToArray(itemsInCart, setItemsInCart, product, numItems);
-  }
-
+  }, [numItems, isClicked]);
   return (
     <div
       className="add-to-cart-container"
-      onClick={() => addItemToCart(product)}
+      onClick={() => updateCart(itemsInCart, setItemsInCart, product, numItems)}
     >
       {isClicked ? (
         <NumItemsToggle

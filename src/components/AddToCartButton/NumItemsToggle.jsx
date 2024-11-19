@@ -9,7 +9,6 @@ function NumItemsToggle({ numItems, setNumItems }) {
   }
   function handleIncrement() {
     setNumItems((currentNumItems) => currentNumItems + 1);
-    console.log("adding one more item");
   }
 
   return (
