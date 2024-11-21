@@ -24,7 +24,7 @@ function Cart({ itemsInCart, setItemsInCart }) {
           <p className="total-price">${totalCost}</p>
         </div>
         <div className="carbon-neutral">This is a carbon-neutral delivery</div>
-        <button className="confirm-order-button">Confirm Order</button>{" "}
+        <button className="confirm-order-button">Confirm Order</button>
       </div>
     </div>
   );

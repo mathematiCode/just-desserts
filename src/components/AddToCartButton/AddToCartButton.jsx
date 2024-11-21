@@ -37,6 +37,11 @@ function AddToCartButton({ itemsInCart, setItemsInCart, product }) {
       updateCart(itemsInCart, setItemsInCart, product, numItems);
     }
   }, [numItems, isClicked]);
+
+  // change isClicked to isSelected or isInCart and the logic to check if the item is in the cart or not. Make sure <UnclickedButton> is rendered when the item is not in the itemsInCart array.
+  // useEffect(() => {
+  //   return;
+  // }, [itemsInCart]);
   return (
     <div
       className="add-to-cart-container"

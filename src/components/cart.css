@@ -20,6 +20,12 @@
   justify-self: start;
 }
 
+.remove-item-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .remove-item-icon {
   grid-column: 2/3;
   padding: 2px;
