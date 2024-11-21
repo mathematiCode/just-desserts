@@ -1,6 +1,13 @@
 /* eslint-disable react/prop-types */
 
-function ItemInCart({ product }) {
+function ItemInCart({ product, itemsInCart, setItemsInCart }) {
+  function handleRemoveItem() {
+    let updatedCart = itemsInCart.filter(
+      (item) => item.folder != product.folder
+    );
+    setItemsInCart(updatedCart);
+  }
+
   return (
     <div className="item-in-cart">
       <img
@@ -17,10 +24,12 @@ function ItemInCart({ product }) {
           }`}</p>
         </div>
       </div>
-      <img
-        className="remove-item-icon"
-        src="../public/assets/images/icon-remove-item.svg"
-      ></img>
+      <button onClick={handleRemoveItem}>
+        <img
+          className="remove-item-icon"
+          src="../public/assets/images/icon-remove-item.svg"
+        ></img>
+      </button>
     </div>
   );
 }

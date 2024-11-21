@@ -19,7 +19,7 @@ function App() {
           ></ProductCard>
         ))}
       </div>
-      <Cart itemsInCart={itemsInCart}></Cart>
+      <Cart itemsInCart={itemsInCart} setItemsInCart={setItemsInCart}></Cart>
     </div>
   );
 }
