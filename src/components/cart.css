@@ -72,6 +72,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+
+.confirm-order-button:hover {
+  background-color: rgb(210, 60, 60);
 }
 
 .cart-bottom-section {

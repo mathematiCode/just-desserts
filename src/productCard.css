@@ -55,14 +55,18 @@
 
 .cart-icon {
   margin-right: 10px;
-  border: none;
+  border: solid 0px transparent;
+}
+
+.cart-icon[data-hovered="true"] {
+  filter: brightness(10);
 }
 
 .cart-icon:hover,
 .cart-icon:focus {
-  fill: white;
-  border: solid;
+  filter: brightness(10);
 }
+
 .num-items-toggle {
   transform: translate(0px, -28px);
   background-color: rgb(200, 50, 50);

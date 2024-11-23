@@ -12,7 +12,7 @@ function ItemInCart({ product, itemsInCart, setItemsInCart }) {
     <div className="item-in-cart">
       <img
         className="item-in-cart-image"
-        src={`../public/assets/images/${product.folder}/image-${product.folder}-mobile.jpg`}
+        src={`../assets/images/${product.folder}/image-${product.folder}-mobile.jpg`}
       ></img>
       <div className="product-info">
         <p className="product-name"> {product.name} </p>
