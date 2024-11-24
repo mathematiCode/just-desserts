@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import ItemInCart from "./ItemInCart";
-import "./cart.css";
+import "../cart.css";
 
 function Cart({ itemsInCart, setItemsInCart }) {
   let totalCost = 0;

@@ -13,7 +13,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
-  cursor: ;
 }
 
 #root {
@@ -35,6 +34,14 @@ body {
   grid-template-columns: 70% 30%;
   gap: 30px;
   margin-inline: 30px;
+}
+
+@media (max-width: 800px) {
+  .two-column-layout {
+    grid-template-columns: 1fr;
+    margin-inline: 0px;
+    gap: 5px;
+  }
 }
 
 h1 {

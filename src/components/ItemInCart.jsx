@@ -27,7 +27,7 @@ function ItemInCart({ product, itemsInCart, setItemsInCart }) {
       <button className="remove-item-button" onClick={handleRemoveItem}>
         <img
           className="remove-item-icon"
-          src="../public/assets/images/icon-remove-item.svg"
+          src="../assets/images/icon-remove-item.svg"
         ></img>
       </button>
     </div>

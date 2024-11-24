@@ -2,6 +2,9 @@
   background-color: white;
   border-radius: 10px;
   height: fit-content;
+  max-width: 500px;
+  width: 100%;
+  margin-inline: auto;
 }
 
 .item-in-cart {
