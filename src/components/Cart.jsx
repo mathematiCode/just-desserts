@@ -8,8 +8,10 @@ function Cart({ itemsInCart, setItemsInCart }) {
   const [isConfirmed, setIsConfirmed] = React.useState(false);
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   let totalCost = 0;
+  let numProductsInCart = 0;
   itemsInCart.forEach((item) => {
     totalCost = totalCost + item.price * item.quantity;
+    numProductsInCart = numProductsInCart + item.quantity;
   });
 
   function handleConfirm() {
@@ -20,29 +22,42 @@ function Cart({ itemsInCart, setItemsInCart }) {
   return (
     <>
       <div className="cart">
-        <h2> Your Cart</h2>
-        {itemsInCart.map((item) => (
-          <ItemInCart
-            key={item.folder}
-            className="item-in-cart"
-            product={item}
-            itemConfirmed={false}
-            itemsInCart={itemsInCart}
-            setItemsInCart={setItemsInCart}
-          ></ItemInCart>
-        ))}
-        <div className="cart-bottom-section">
-          <div className="cart-total">
-            <p>Total</p>
-            <p className="total-price">${totalCost}</p>
+        <h2 className="cart-header"> Your Cart {`(${numProductsInCart})`}</h2>
+        {numProductsInCart <= 0 && (
+          <>
+            <img src="../assets/images/illustration-empty-cart.svg"></img>
+            <p> Your items will appear here</p>
+          </>
+        )}
+        {numProductsInCart > 0 &&
+          itemsInCart.map((item) => (
+            <ItemInCart
+              key={item.folder}
+              className="item-in-cart"
+              product={item}
+              itemConfirmed={false}
+              itemsInCart={itemsInCart}
+              setItemsInCart={setItemsInCart}
+            ></ItemInCart>
+          ))}
+        {numProductsInCart > 0 && (
+          <div className="cart-bottom-section">
+            <div className="cart-total">
+              <p>Total</p>
+              <p className="total-price">${totalCost}</p>
+            </div>
+            <div className="carbon-neutral">
+              This is a carbon-neutral delivery
+            </div>
+            <button
+              className="confirm-order-button"
+              onClick={handleConfirm}
+              disabled={isConfirmed}
+            >
+              Confirm Order
+            </button>
           </div>
-          <div className="carbon-neutral">
-            This is a carbon-neutral delivery
-          </div>
-          <button className="confirm-order-button" onClick={handleConfirm}>
-            Confirm Order
-          </button>
-        </div>
+        )}
       </div>
       {isConfirmed && (
         <ConfirmOrderModal

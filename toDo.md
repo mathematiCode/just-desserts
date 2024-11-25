@@ -5,6 +5,7 @@ implement the remove from cart button ✅
 implement the math for the cart total ✅
 fix the styling for the cart icon in the add to cart button ✅
 mobile responsiveness ✅
-Cart styling
-Error handling for empty cart
-Implement start new order button
+Cart styling ✅
+Error handling for empty cart ✅
+Implement start new order button ✅
+Disable things once order is confirmed.

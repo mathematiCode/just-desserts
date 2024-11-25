@@ -51,7 +51,13 @@ function ConfirmOrderModal({
           </div>
         </div>
 
-        <button className="start-new-order-button"> Start New Order</button>
+        <button
+          className="start-new-order-button"
+          onClick={() => location.reload()}
+        >
+          {" "}
+          Start New Order
+        </button>
       </DialogPanel>
     </Dialog>
   );
