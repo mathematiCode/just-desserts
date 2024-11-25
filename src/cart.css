@@ -13,18 +13,7 @@
   align-items: center;
   margin: 20px;
   height: 80px;
-  border-bottom: 0.3px solid var(--taupe);
-}
-
-.item-in-modal {
-  display: grid;
-  grid-template-columns: 90px 1fr;
-  align-items: center;
-  justify-content: start;
-  gap: 20px;
-  margin: 20px;
-  height: 80px;
-  border-bottom: 0.3px solid var(--taupe);
+  border-bottom: 0.4px solid var(--taupe-300);
 }
 
 .product-info {
@@ -131,6 +120,62 @@
   width: fit-content;
   padding: 20px;
   border-radius: 10px;
+}
+
+.modal-icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-container {
+  background-color: var(--taupe-50);
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.item-in-modal {
+  display: grid;
+  grid-template-columns: 90px 1fr 60px;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+  margin: 20px;
+  height: 80px;
+  border-bottom: 0.5px solid var(--taupe-300);
+}
+
+.close-modal-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.dialog-title {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.total-price-for-items-modal {
+  font-size: 1.2rem;
+  font-weight: 600;
+  justify-self: end;
+  color: var(--rose-900);
+}
+
+.total-cost-modal {
+  font-size: 1.5rem;
+  font-weight: 700;
+  justify-self: end;
+  color: var(--rose-900);
+}
+
+.modal-total-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  padding-bottom: 20px;
+  color: var(--rose-900);
 }
 
 .backdrop {

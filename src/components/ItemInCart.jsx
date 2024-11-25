@@ -27,11 +27,18 @@ function ItemInCart({
         <div className="product-details">
           <p className="quantity"> {`${product.quantity}x`} </p>
           <p className="price-per-item"> {`@ $${product.price}`} </p>
-          <p className="total-price-for-items">{`$${
-            product.price * product.quantity
-          }`}</p>
+          {!itemConfirmed && (
+            <p className="total-price-for-items">{`$${
+              product.price * product.quantity
+            }`}</p>
+          )}
         </div>
       </div>
+      {itemConfirmed && (
+        <p className="total-price-for-items-modal">{`$${
+          product.price * product.quantity
+        }`}</p>
+      )}
       {!itemConfirmed && (
         <button className="remove-item-button" onClick={handleRemoveItem}>
           <img

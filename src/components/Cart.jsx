@@ -47,6 +47,7 @@ function Cart({ itemsInCart, setItemsInCart }) {
       {isConfirmed && (
         <ConfirmOrderModal
           itemsInCart={itemsInCart}
+          totalCost={totalCost}
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}
         ></ConfirmOrderModal>
