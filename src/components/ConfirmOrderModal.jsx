@@ -3,7 +3,12 @@ import ItemInCart from "./ItemInCart";
 import { CircleCheck } from "lucide-react";
 import "../cart.css";
 
-import { Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
+import {
+  Dialog,
+  DialogBackdrop,
+  DialogPanel,
+  DialogTitle,
+} from "@headlessui/react";
 
 function ConfirmOrderModal({
   itemsInCart,
@@ -18,7 +23,7 @@ function ConfirmOrderModal({
         open={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       >
-        <div className="modal-backdrop"></div>
+        <DialogBackdrop className="modal-backdrop"></DialogBackdrop>
         <DialogPanel className="dialog">
           <div className="modal-icons">
             <CircleCheck />
@@ -36,10 +41,10 @@ function ConfirmOrderModal({
                 itemsInCart={itemsInCart}
               ></ItemInCart>
             ))}
-            <div className="modal-total-container">
-              <p>Order Total</p>
-              <p className="total-cost-modal">${totalCost}</p>
-            </div>
+          </div>
+          <div className="modal-total-container">
+            <p>Order Total</p>
+            <p className="total-cost-modal">${totalCost}</p>
           </div>
 
           <button
