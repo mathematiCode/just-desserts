@@ -2,8 +2,10 @@
 import React, { useEffect } from "react";
 import UnclickedButton from "./UnclickedButton";
 import NumItemsToggle from "./NumItemsToggle";
+import { ItemsInCartContext } from "../../ItemsInCartProvider";
 
-function AddToCartButton({ itemsInCart, setItemsInCart, product }) {
+function AddToCartButton({ product }) {
+  const { itemsInCart, setItemsInCart } = React.useContext(ItemsInCartContext);
   const [isSelected, setIsSelected] = React.useState(false);
   const [numItems, setNumItems] = React.useState(0);
 
@@ -46,10 +48,6 @@ function AddToCartButton({ itemsInCart, setItemsInCart, product }) {
     }
   });
 
-  // change isClicked to isSelected or isInCart and the logic to check if the item is in the cart or not. Make sure <UnclickedButton> is rendered when the item is not in the itemsInCart array.
-  // useEffect(() => {
-  //   return;
-  // }, [itemsInCart]);
   return (
     <div
       className="add-to-cart-container"

@@ -3,20 +3,14 @@
 import AddToCartButton from "./AddToCartButton/AddToCartButton";
 import "../productCard.css";
 
-function ProductCard({ product, itemsInCart, setItemsInCart }) {
+function ProductCard({ product }) {
   return (
     <div className="product-card">
       <img
         className="product-image"
         src={`../assets/images/${product.folder}/image-${product.folder}-mobile.jpg`}
       ></img>
-      <AddToCartButton
-        itemsInCart={itemsInCart}
-        setItemsInCart={setItemsInCart}
-        product={product}
-      >
-        {" "}
-      </AddToCartButton>
+      <AddToCartButton product={product}> </AddToCartButton>
       <h2> {product.name} </h2>
     </div>
   );

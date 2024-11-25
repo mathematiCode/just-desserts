@@ -1,12 +1,10 @@
 /* eslint-disable react/prop-types */
+import React from "react";
+import { ItemsInCartContext } from "../ItemsInCartProvider";
 
-function ItemInCart({
-  className,
-  product,
-  itemConfirmed,
-  itemsInCart,
-  setItemsInCart,
-}) {
+function ItemInCart({ className, product, itemConfirmed }) {
+  const { itemsInCart, setItemsInCart } = React.useContext(ItemsInCartContext);
+
   function handleRemoveItem() {
     let updatedCart = itemsInCart.filter(
       (item) => item.folder != product.folder
