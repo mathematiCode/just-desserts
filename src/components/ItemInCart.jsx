@@ -1,6 +1,12 @@
 /* eslint-disable react/prop-types */
 
-function ItemInCart({ product, itemsInCart, setItemsInCart }) {
+function ItemInCart({
+  className,
+  product,
+  itemConfirmed,
+  itemsInCart,
+  setItemsInCart,
+}) {
   function handleRemoveItem() {
     let updatedCart = itemsInCart.filter(
       (item) => item.folder != product.folder
@@ -9,11 +15,13 @@ function ItemInCart({ product, itemsInCart, setItemsInCart }) {
   }
 
   return (
-    <div className="item-in-cart">
-      <img
-        className="item-in-cart-image"
-        src={`../assets/images/${product.folder}/image-${product.folder}-mobile.jpg`}
-      ></img>
+    <div className={className}>
+      {itemConfirmed && (
+        <img
+          className="item-in-cart-image"
+          src={`../assets/images/${product.folder}/image-${product.folder}-mobile.jpg`}
+        ></img>
+      )}
       <div className="product-info">
         <p className="product-name"> {product.name} </p>
         <div className="product-details">
@@ -24,12 +32,14 @@ function ItemInCart({ product, itemsInCart, setItemsInCart }) {
           }`}</p>
         </div>
       </div>
-      <button className="remove-item-button" onClick={handleRemoveItem}>
-        <img
-          className="remove-item-icon"
-          src="../assets/images/icon-remove-item.svg"
-        ></img>
-      </button>
+      {!itemConfirmed && (
+        <button className="remove-item-button" onClick={handleRemoveItem}>
+          <img
+            className="remove-item-icon"
+            src="../assets/images/icon-remove-item.svg"
+          ></img>
+        </button>
+      )}
     </div>
   );
 }
