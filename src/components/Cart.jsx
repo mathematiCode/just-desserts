@@ -3,9 +3,10 @@ import React from "react";
 import ItemInCart from "./ItemInCart";
 import ConfirmOrderModal from "./ConfirmOrderModal";
 import "../cart.css";
+import { IsConfirmedContext } from "../IsConfirmedProvider";
 
 function Cart({ itemsInCart, setItemsInCart }) {
-  const [isConfirmed, setIsConfirmed] = React.useState(false);
+  const { isConfirmed, setIsConfirmed } = React.useContext(IsConfirmedContext);
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   let totalCost = 0;
   let numProductsInCart = 0;
@@ -49,11 +50,7 @@ function Cart({ itemsInCart, setItemsInCart }) {
             <div className="carbon-neutral">
               This is a carbon-neutral delivery
             </div>
-            <button
-              className="confirm-order-button"
-              onClick={handleConfirm}
-              disabled={isConfirmed}
-            >
+            <button className="confirm-order-button" onClick={handleConfirm}>
               Confirm Order
             </button>
           </div>

@@ -1,26 +1,11 @@
-import "./index.css";
-import data from "./data.json";
-import React from "react";
-import ProductCard from "./components/ProductCard";
-import Cart from "./components/Cart";
+import IsConfirmedProvider from "./IsConfirmedProvider";
+import MainPage from "./MainPage";
 
 function App() {
-  const [itemsInCart, setItemsInCart] = React.useState([]);
-
   return (
-    <div className="two-column-layout">
-      <div className="product-grid">
-        {data.map((product) => (
-          <ProductCard
-            key={product.folder}
-            product={product}
-            itemsInCart={itemsInCart}
-            setItemsInCart={setItemsInCart}
-          ></ProductCard>
-        ))}
-      </div>
-      <Cart itemsInCart={itemsInCart} setItemsInCart={setItemsInCart}></Cart>
-    </div>
+    <IsConfirmedProvider>
+      <MainPage></MainPage>
+    </IsConfirmedProvider>
   );
 }
 

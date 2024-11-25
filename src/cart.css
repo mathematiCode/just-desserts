@@ -88,10 +88,6 @@
   background-color: rgb(210, 60, 60);
 }
 
-.confirm-order-button:disabled {
-  background-color: gray;
-}
-
 .start-new-order-button {
   color: white;
   background-color: rgb(200, 50, 50);
@@ -122,9 +118,12 @@
 }
 
 .confirmed-modal {
+}
+
+.dialog {
+  z-index: 2;
   background-color: white;
-  position: fixed;
-  z-index: 1;
+  position: absolute;
   align-self: center;
   inset: 0;
   margin-inline: auto;
@@ -190,6 +189,10 @@
   color: var(--rose-900);
 }
 
-.backdrop {
-  background: rgb(0 0 0 / 0.4);
+.modal-backdrop {
+  background-color: rgb(0 0 0 / 0.4);
+  position: fixed;
+  opacity: 50;
+  inset: 0;
+  z-index: 1;
 }
