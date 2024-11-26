@@ -120,7 +120,7 @@
 .dialog {
   z-index: 2;
   background-color: white;
-  position: absolute;
+  position: fixed;
   align-self: center;
   inset: 0;
   margin-inline: auto;
