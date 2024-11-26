@@ -44,8 +44,8 @@ function Cart({ itemsInCart, setItemsInCart }) {
         {numProductsInCart > 0 && (
           <div className="cart-bottom-section">
             <div className="cart-total">
-              <p>Total</p>
-              <p className="total-price">${totalCost}</p>
+              <p className="bold-text">Total</p>
+              <p className="total-cost">${totalCost}</p>
             </div>
             <div className="carbon-neutral">
               This is a carbon-neutral delivery

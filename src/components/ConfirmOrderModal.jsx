@@ -2,6 +2,7 @@
 import ItemInCart from "./ItemInCart";
 import { CircleCheck } from "lucide-react";
 import "../cart.css";
+import { useNavigate } from "react-router";
 
 import {
   Dialog,
@@ -16,12 +17,17 @@ function ConfirmOrderModal({
   isModalOpen,
   setIsModalOpen,
 }) {
+  const navigate = useNavigate();
+  function handleDismiss() {
+    setIsModalOpen(false);
+    navigate("/orderconfirmed");
+  }
   return (
     <>
       <Dialog
         className="confirmed-modal"
         open={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+        onClose={handleDismiss}
       >
         <DialogBackdrop className="modal-backdrop"></DialogBackdrop>
         <DialogPanel className="dialog">
@@ -44,7 +50,7 @@ function ConfirmOrderModal({
           </div>
           <div className="modal-total-container">
             <p>Order Total</p>
-            <p className="total-cost-modal">${totalCost}</p>
+            <p className="total-cost">${totalCost}</p>
           </div>
 
           <button

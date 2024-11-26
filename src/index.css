@@ -8,8 +8,8 @@
   line-height: 1.5;
   font-weight: 400;
 
-  background-color: rgb(255, 245, 245);
-
+  /* background-color: rgb(255, 245, 245); */
+  background-color: var(--taupe-50);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -59,9 +59,3 @@ h2 {
 p {
   margin: 0px;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    color: white;
-    background-color: rgb(80, 60, 50);
-} */
