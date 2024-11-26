@@ -68,3 +68,17 @@ h2 {
 p {
   margin: 0px;
 }
+
+.attribution {
+  font-size: 0.8rem;
+  text-align: center;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  color: white;
+  background: rgb(200, 50, 50);
+}
+.attribution a {
+  color: var(--primary-200);
+}
