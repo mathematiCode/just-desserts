@@ -9,6 +9,7 @@ function ProductCard({ product }) {
       <img
         className="product-image"
         src={`../assets/images/${product.folder}/image-${product.folder}-mobile.jpg`}
+        alt=""
       ></img>
       <AddToCartButton product={product}> </AddToCartButton>
       <h2> {product.name} </h2>

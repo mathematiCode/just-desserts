@@ -33,7 +33,11 @@ function ConfirmOrderModal({
         <DialogPanel className="dialog">
           <div className="modal-icons">
             <CircleCheck />
-            <button className="close-modal-button" onClick={handleDismiss}>
+            <button
+              className="close-modal-button"
+              alt="Close Modal"
+              onClick={handleDismiss}
+            >
               <X />{" "}
             </button>
           </div>

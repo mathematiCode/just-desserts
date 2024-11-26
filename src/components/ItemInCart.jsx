@@ -18,6 +18,7 @@ function ItemInCart({ className, product, itemConfirmed }) {
         <img
           className="item-in-cart-image"
           src={`../assets/images/${product.folder}/image-${product.folder}-mobile.jpg`}
+          alt=""
         ></img>
       )}
       <div className="product-info">
@@ -38,7 +39,11 @@ function ItemInCart({ className, product, itemConfirmed }) {
         }`}</p>
       )}
       {!itemConfirmed && (
-        <button className="remove-item-button" onClick={handleRemoveItem}>
+        <button
+          className="remove-item-button"
+          alt="Remove item from cart"
+          onClick={handleRemoveItem}
+        >
           <img
             className="remove-item-icon"
             src="../assets/images/icon-remove-item.svg"
