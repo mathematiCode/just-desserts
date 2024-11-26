@@ -26,7 +26,10 @@ function Cart({ itemsInCart, setItemsInCart }) {
         <h2 className="cart-header"> Your Cart {`(${numProductsInCart})`}</h2>
         {numProductsInCart <= 0 && (
           <>
-            <img src="../assets/images/illustration-empty-cart.svg"></img>
+            <img
+              src="../assets/images/illustration-empty-cart.svg"
+              alt=""
+            ></img>
             <p> Your items will appear here</p>
           </>
         )}

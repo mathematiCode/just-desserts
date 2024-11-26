@@ -18,6 +18,7 @@ function UnclickedButton() {
         data-hovered={hovered}
         className="cart-icon"
         src="/assets/images/icon-add-to-cart.svg"
+        alt=""
       ></img>
       Add to Cart
     </button>
