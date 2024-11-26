@@ -112,9 +112,9 @@
 
 .cart-total {
   display: flex;
-  justify-content: center;
+  width: 100%;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
 }
 
 .dialog {
@@ -170,7 +170,7 @@
   color: var(--rose-900);
 }
 
-.total-cost-modal {
+.total-cost {
   font-size: 1.5rem;
   font-weight: 700;
   justify-self: end;

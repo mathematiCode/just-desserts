@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import ItemInCart from "./ItemInCart";
-import { CircleCheck } from "lucide-react";
+import { CircleCheck, X } from "lucide-react";
 import "../cart.css";
 import { useNavigate } from "react-router";
 
@@ -33,6 +33,9 @@ function ConfirmOrderModal({
         <DialogPanel className="dialog">
           <div className="modal-icons">
             <CircleCheck />
+            <button className="close-modal-button" onClick={handleDismiss}>
+              <X />{" "}
+            </button>
           </div>
 
           <DialogTitle className="dialog-title"> Order Confirmed</DialogTitle>

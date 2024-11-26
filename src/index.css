@@ -31,6 +31,10 @@ body {
   min-height: 100vh;
 }
 
+button {
+  cursor: pointer;
+}
+
 .two-column-layout {
   display: grid;
   grid-template-columns: 70% 30%;
