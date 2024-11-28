@@ -13,6 +13,7 @@ function ProductCard({ product }) {
       ></img>
       <AddToCartButton product={product}> </AddToCartButton>
       <h2> {product.name} </h2>
+      <p className="product-price">{`$${product.price.toFixed(2)}`} </p>
     </div>
   );
 }

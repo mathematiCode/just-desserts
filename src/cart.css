@@ -10,7 +10,7 @@
 
 .cart-header {
   font-size: 1.4rem;
-  color: rgb(200, 50, 50);
+  color: var(--primary-red);
   justify-self: start;
   margin-left: 20px;
 }
@@ -39,7 +39,7 @@
 .remove-item-icon {
   grid-column: 2/3;
   padding: 2px;
-  border: 1px solid var(--taupe-100);
+  border: 1px solid var(--taupe-300);
   border-radius: 100%;
 }
 
@@ -64,7 +64,7 @@
 }
 
 .quantity {
-  color: hsl(20, 80%, 50%);
+  color: rgb(200, 70, 70);
   font-weight: 900;
 }
 .price-per-item {
@@ -83,7 +83,7 @@
 
 .confirm-order-button {
   color: white;
-  background-color: rgb(200, 50, 50);
+  background-color: var(--primary-red);
   font-size: 1rem;
   border-radius: 20px;
   width: 160px;
@@ -95,12 +95,12 @@
 }
 
 .confirm-order-button:hover {
-  background-color: rgb(210, 60, 60);
+  background-color: rgb(200, 70, 70);
 }
 
 .start-new-order-button {
   color: white;
-  background-color: rgb(200, 50, 50);
+  background-color: var(--primary-red);
   font-size: 1rem;
   border-radius: 20px;
   width: 100%;

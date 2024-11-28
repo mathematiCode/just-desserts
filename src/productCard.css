@@ -1,6 +1,6 @@
 .product-card h2 {
   margin: 10px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   transform: translate(0px, -28px);
 }
 .product-grid {
@@ -19,7 +19,7 @@
 
 .product-card:hover,
 .product-card:focus {
-  border: 2.5px solid rgb(200, 50, 50);
+  border: 2.5px solid var(--primary-red);
 }
 
 .product-image {
@@ -27,11 +27,17 @@
   border-radius: 6px;
 }
 
+.product-price {
+  transform: translate(0px, -38px);
+  color: rgb(200, 70, 70);
+  font-weight: 600;
+}
+
 .add-to-cart-button {
   transform: translate(0px, -28px);
   background-color: white;
-  color: rgb(200, 50, 50);
-  border: 1px solid rgb(200, 50, 50);
+  color: var(--primary-red);
+  border: 1px solid var(--primary-red);
   font-size: 1rem;
   border-radius: 20px;
   width: 160px;
@@ -43,7 +49,7 @@
 
 .add-to-cart-button:focus,
 .add-to-cart-button:hover {
-  background-color: rgb(200, 50, 50);
+  background-color: var(--primary-red);
   color: white;
   cursor: pointer;
 }
@@ -70,7 +76,7 @@
 
 .num-items-toggle {
   transform: translate(0px, -28px);
-  background-color: rgb(200, 50, 50);
+  background-color: var(--primary-red);
   width: 160px;
   height: 40px;
   border-radius: 20px;

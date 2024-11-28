@@ -1,14 +1,14 @@
 :root {
-  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
   --taupe-50: hsl(14, 25%, 95%);
   --taupe-100: #caafa7;
   --taupe-300: hsl(13, 15%, 50%);
   --rose-900: hsl(14, 65%, 9%);
+  --primary-red: rgb(200, 50, 50);
+  --primary-red-lighter: rgb(200, 70, 70);
+
   font-family: "Red Hat Text", Helvetica;
   line-height: 1.5;
   font-weight: 400;
-
-  /* background-color: rgb(255, 245, 245); */
   background-color: var(--taupe-50);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -20,7 +20,7 @@
 #root {
   width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0px;
   text-align: center;
 }
 
@@ -39,6 +39,7 @@ button {
   display: grid;
   grid-template-columns: 70% 30%;
   gap: 30px;
+  padding: 2rem;
   margin-inline: 30px;
 }
 
@@ -72,13 +73,13 @@ p {
 .attribution {
   font-size: 0.8rem;
   text-align: center;
-  position: fixed;
+  position: relative;
   bottom: 0px;
   right: 0px;
   left: 0px;
   color: white;
-  background: rgb(200, 50, 50);
+  background: var(--primary-red);
 }
 .attribution a {
-  color: var(--primary-200);
+  color: inherit;
 }
