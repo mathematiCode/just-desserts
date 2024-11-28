@@ -25,18 +25,18 @@ function ItemInCart({ className, product, itemConfirmed }) {
         <p className="product-name"> {product.name} </p>
         <div className="product-details">
           <p className="quantity"> {`${product.quantity}x`} </p>
-          <p className="price-per-item"> {`@ $${product.price}`} </p>
+          <p className="price-per-item"> {`@ $${product.price.toFixed(2)}`} </p>
           {!itemConfirmed && (
-            <p className="total-price-for-items">{`$${
+            <p className="total-price-for-items">{`$${(
               product.price * product.quantity
-            }`}</p>
+            ).toFixed(2)}`}</p>
           )}
         </div>
       </div>
       {itemConfirmed && (
-        <p className="total-price-for-items-modal">{`$${
+        <p className="total-price-for-items-modal">{`$${(
           product.price * product.quantity
-        }`}</p>
+        ).toFixed(2)}`}</p>
       )}
       {!itemConfirmed && (
         <button

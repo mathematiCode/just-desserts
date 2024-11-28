@@ -48,7 +48,7 @@ function Cart({ itemsInCart, setItemsInCart }) {
           <div className="cart-bottom-section">
             <div className="cart-total">
               <p className="bold-text">Total</p>
-              <p className="total-cost">${totalCost}</p>
+              <p className="total-cost">${totalCost.toFixed(2)}</p>
             </div>
             <div className="carbon-neutral">
               <img src="../assets/images/icon-carbon-neutral.svg"></img>

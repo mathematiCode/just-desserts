@@ -32,7 +32,7 @@ function OrderConfirmed() {
         </div>
         <div className="modal-total-container">
           <p className="bold-text">Order Total</p>
-          <p className="total-cost">${totalCost}</p>
+          <p className="total-cost">${totalCost.toFixed(2)}</p>
         </div>
         <button
           className="start-new-order-button"

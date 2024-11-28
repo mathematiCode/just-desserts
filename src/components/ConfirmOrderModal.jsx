@@ -57,7 +57,7 @@ function ConfirmOrderModal({
           </div>
           <div className="modal-total-container">
             <p>Order Total</p>
-            <p className="total-cost">${totalCost}</p>
+            <p className="total-cost">${totalCost.toFixed(2)}</p>
           </div>
 
           <button
