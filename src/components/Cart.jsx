@@ -51,6 +51,7 @@ function Cart({ itemsInCart, setItemsInCart }) {
               <p className="total-cost">${totalCost}</p>
             </div>
             <div className="carbon-neutral">
+              <img src="../assets/images/icon-carbon-neutral.svg"></img>
               This is a carbon-neutral delivery
             </div>
             <button className="confirm-order-button" onClick={handleConfirm}>
